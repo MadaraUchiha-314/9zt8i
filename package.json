@@ -14,7 +14,8 @@
     "serve": "nodemon",
     "serve:prod": "npm run build && node ./dist/index.js",
     "lint": "npx prettier ./ --write && npx eslint ./ --fix",
-    "test": ""
+    "test": "",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",

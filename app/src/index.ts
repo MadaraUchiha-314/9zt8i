@@ -12,6 +12,11 @@ const main = () => {
       status: 'ok',
     });
   });
+  app.get('/', (_, res) => {
+    res.json({
+      message: 'Hello, World!',
+    });
+  });
 };
 
 main();
