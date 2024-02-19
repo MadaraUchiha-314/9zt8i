@@ -1,18 +1,17 @@
-import http from 'node:http';
+import express from 'express';
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const PORT = 3000;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'application/json');
-  res.end(
-    JSON.stringify({
-      message: 'Hello, World!',
-    }),
-  );
-});
+const main = () => {
+  const app = express();
+  app.listen(PORT, () => {
+    console.log('app running on port: ', PORT);
+  });
+  app.get('/health', (_, res) => {
+    res.json({
+      status: 'ok',
+    });
+  });
+};
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+main();
