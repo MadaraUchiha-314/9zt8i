@@ -10,9 +10,7 @@
   "main": "./app/src/index.ts",
   "scripts": {
     "build": "rm -rf ./dist && rollup --config rollup.config.mjs",
-    "build:image": "",
     "serve": "nodemon",
-    "serve:prod": "npm run build && node ./dist/index.js",
     "lint": "npx prettier ./ --write && npx eslint ./ --fix",
     "test": "",
     "prepare": "husky"
@@ -28,6 +26,9 @@
   },
   "homepage": "https://github.com/MadaraUchiha-314/9zt8i#readme",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "25.0.7",
+    "@rollup/plugin-json": "6.1.0",
+    "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-replace": "5.0.5",
     "@rollup/plugin-typescript": "11.1.6",
     "@types/express": "4.17.21",
